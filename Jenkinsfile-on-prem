@@ -8,7 +8,7 @@ pipeline {
     parameters {
         string(name:'TAG_NAME',defaultValue: '',description:'')
     }
-
+    /*
     environment {
         HARBOR_CREDENTIAL_ID = 'harbor-id'
         GITLAB_CREDENTIAL_ID = 'gitlab-id'
@@ -19,7 +19,17 @@ pipeline {
         APP_NAME = 'devops-java-sample'
         SONAR_CREDENTIAL_ID= 'sonar-token'
     }
+    */
+    environment {
+            DOCKER_CREDENTIAL_ID = 'docker-hub'
+            GITHUB_CREDENTIAL_ID = 'github-id'
+            KUBECONFIG_CREDENTIAL_ID = 'kubeconfig'
+            REGISTRY = 'docker.io'
+            DOCKERHUB_NAMESPACE = 'iqiujunwei'
+            DOCKERHUB_ACCOUNT = 'iqiujunwei'
+            APP_NAME = 'jhipster-registry'
 
+        }
     stages {
         stage ('checkout scm') {
             steps {
